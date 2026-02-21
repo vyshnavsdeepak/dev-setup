@@ -1,19 +1,10 @@
 #!/bin/bash
 set -e
 
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
+
 echo "==> Installing Homebrew packages"
-
-# Languages & runtimes
-brew install fnm go neovim
-
-# Containers
-brew install docker docker-compose colima
-
-# CLI tools
-brew install fzf bat eza fd ripgrep jq zoxide starship tmux lazygit lazydocker tldr gnupg glow
-
-# Terminal
-brew install --cask ghostty
+brew bundle --file="$DOTFILES_DIR/Brewfile"
 
 # Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
