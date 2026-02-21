@@ -1,0 +1,34 @@
+# Font
+font-family = JetBrains Mono
+font-size = 14
+font-feature = calt
+font-feature = liga
+
+# Theme
+theme = catppuccin-mocha
+
+# Window
+window-padding-x = 8
+window-padding-y = 4
+window-decoration = true
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+
+# Shell integration
+shell-integration = zsh
+
+# Clipboard
+copy-on-select = clipboard
+clipboard-paste-protection = false
+
+# Performance
+repaint-delay = 0
+
+# Since we use tmux, disable Ghostty's own keybinds for splits/tabs
+keybind = super+d=unbind
+keybind = super+shift+d=unbind
+keybind = super+t=unbind
