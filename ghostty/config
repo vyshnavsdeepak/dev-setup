@@ -1,32 +1,61 @@
-# Font
-font-family = JetBrainsMono Nerd Font
+# ================================================================
+# INDUSTRIAL MINIMAL — Ghostty
+# Dark. Muted. One accent. No decoration.
+# ================================================================
+
+# Font: macOS system monospace. No nerd fonts. No ligatures.
+font-family = SF Mono
 font-size = 14
-font-feature = calt
-font-feature = liga
 
-# Theme
-theme = Catppuccin Mocha
-
-# Window
-window-padding-x = 8
-window-padding-y = 4
+# Window: functional, no decoration beyond what the OS requires
+window-padding-x = 12
+window-padding-y = 8
 window-decoration = true
 macos-titlebar-style = tabs
 macos-option-as-alt = true
 
-# Cursor
+# Cursor: solid block, no blink. You know where you are.
 cursor-style = block
 cursor-style-blink = false
+cursor-color = #cc7832
 
-# Shell integration
+# Shell
 shell-integration = zsh
 
 # Clipboard
 copy-on-select = clipboard
 clipboard-paste-protection = false
 
+# No theme — custom palette below
+# Background: not pure black. Softened to reduce eye strain.
+background = #191919
+# Foreground: not pure white. Silver reduces bloom on dark bg.
+foreground = #c0c0c0
 
-# Since we use tmux, disable Ghostty's own keybinds for splits/tabs
+# Selection: subtle inversion, not jarring
+selection-background = #333333
+selection-foreground = #e0e0e0
+
+# Muted ANSI palette — functional, not decorative
+# Every color desaturated. Only amber (yellow) stands out — the accent.
+palette = 0=#191919
+palette = 1=#a04040
+palette = 2=#608040
+palette = 3=#cc7832
+palette = 4=#5078a0
+palette = 5=#806080
+palette = 6=#508080
+palette = 7=#c0c0c0
+palette = 8=#404040
+palette = 9=#c06060
+palette = 10=#80a060
+palette = 11=#cc9050
+palette = 12=#6090c0
+palette = 13=#a080a0
+palette = 14=#60a0a0
+palette = 15=#e0e0e0
+
+# Tmux handles multiplexing — unbind Ghostty's own splits/tabs
 keybind = super+d=unbind
 keybind = super+shift+d=unbind
 keybind = super+t=unbind
