@@ -7,13 +7,10 @@ echo "==> Installing Homebrew packages"
 brew install fnm go neovim
 
 # Containers
-brew install docker docker-compose
+brew install docker docker-compose colima
 
 # CLI tools
 brew install fzf bat eza fd ripgrep jq zoxide starship tmux lazygit lazydocker tldr gnupg
-
-# Fonts
-brew install --cask font-jetbrains-mono
 
 # Terminal
 brew install --cask ghostty
@@ -32,5 +29,8 @@ fi
 eval "$(fnm env)"
 fnm install --lts
 fnm default lts-latest
+
+# Start Colima (Docker runtime)
+colima start --cpu 4 --memory 8 --disk 60
 
 echo "==> Done! Run ./install.sh to link dotfiles"
