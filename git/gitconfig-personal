@@ -1,0 +1,5 @@
+[user]
+	email = user@personal.example.com
+	signingkey = YOUR_PERSONAL_GPG_KEY_ID
+[url "git@github-personal:"]
+	insteadOf = git@github.com:

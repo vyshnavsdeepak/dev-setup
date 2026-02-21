@@ -1,0 +1,23 @@
+[user]
+	name = Your Name
+	email = user@work.example.com
+	signingkey = YOUR_WORK_GPG_KEY_ID
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore_global
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[rerere]
+	enabled = true
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+	program = gpg
+[includeIf "gitdir:~/src/github.com/vyshnavsdeepak/"]
+	path = ~/.gitconfig-personal
