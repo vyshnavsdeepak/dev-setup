@@ -1,0 +1,200 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# ──────────────────────────────────────────────────────────────
+# Catppuccin Mocha — Starship Prompt
+# Designed for: Ghostty + tmux + JetBrainsMono Nerd Font
+# Stack: JS/React, Go, Docker
+# ──────────────────────────────────────────────────────────────
+
+format = """
+[](mauve)\
+$os\
+[](bg:red fg:mauve)\
+$directory\
+[](bg:peach fg:red)\
+$git_branch\
+$git_status\
+[](fg:peach bg:yellow)\
+$golang\
+$nodejs\
+[](fg:yellow bg:green)\
+$docker_context\
+[](fg:green bg:blue)\
+$cmd_duration\
+[ ](fg:blue)\
+$line_break\
+$character"""
+
+palette = 'catppuccin_mocha'
+add_newline = true
+
+# ── OS ────────────────────────────────────────────────────────
+
+[os]
+disabled = false
+style = "bg:mauve fg:crust"
+
+[os.symbols]
+Macos = "󰀵"
+Linux = "󰌽"
+Ubuntu = "󰕈"
+Debian = "󰣚"
+Fedora = "󰣛"
+Arch = "󰣇"
+Alpine = ""
+
+# ── Directory ─────────────────────────────────────────────────
+
+[directory]
+style = "bg:red fg:crust"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = ".../"
+read_only = " 󰌾"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"src" = " "
+
+# ── Git ───────────────────────────────────────────────────────
+
+[git_branch]
+symbol = " "
+style = "bg:peach fg:crust"
+format = '[ $symbol$branch(:$remote_branch) ]($style)'
+truncation_length = 25
+
+[git_status]
+style = "bg:peach fg:crust"
+format = '[$all_status$ahead_behind ]($style)'
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+conflicted = " "
+untracked = "? "
+stashed = "$ "
+modified = "! "
+staged = "+ "
+renamed = "» "
+deleted = "✘ "
+
+# ── Languages ─────────────────────────────────────────────────
+
+[golang]
+symbol = " "
+style = "bg:yellow fg:crust"
+format = '[ $symbol$version ]($style)'
+detect_extensions = ['go']
+detect_files = ['go.mod', 'go.sum']
+
+[nodejs]
+symbol = " "
+style = "bg:yellow fg:crust"
+format = '[ $symbol$version ]($style)'
+detect_extensions = ['js', 'mjs', 'cjs', 'ts', 'tsx', 'jsx']
+detect_files = ['package.json', '.node-version', '.nvmrc']
+
+# ── Docker ────────────────────────────────────────────────────
+
+[docker_context]
+symbol = " "
+style = "bg:green fg:crust"
+format = '[ $symbol$context ]($style)'
+only_with_files = true
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile', 'compose.yaml', 'compose.yml']
+
+# ── Command Duration ──────────────────────────────────────────
+
+[cmd_duration]
+min_time = 2_000
+style = "bg:blue fg:crust"
+format = '[ 󱎫 $duration ]($style)'
+show_milliseconds = false
+
+# ── Line Break ────────────────────────────────────────────────
+
+[line_break]
+disabled = false
+
+# ── Prompt Character ──────────────────────────────────────────
+
+[character]
+success_symbol = '[](bold green)'
+error_symbol = '[](bold red)'
+vimcmd_symbol = '[](bold mauve)'
+vimcmd_replace_one_symbol = '[](bold peach)'
+vimcmd_replace_symbol = '[](bold peach)'
+vimcmd_visual_symbol = '[](bold yellow)'
+
+# ── Disabled Modules ─────────────────────────────────────────
+# Keeping these off for a clean prompt. Enable as needed.
+
+[aws]
+disabled = true
+
+[azure]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[kubernetes]
+disabled = true
+
+[terraform]
+disabled = true
+
+[vagrant]
+disabled = true
+
+[package]
+disabled = true
+
+[python]
+disabled = true
+
+[ruby]
+disabled = true
+
+[rust]
+disabled = true
+
+[java]
+disabled = true
+
+[php]
+disabled = true
+
+[time]
+disabled = true
+
+# ── Catppuccin Mocha Palette ──────────────────────────────────
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
