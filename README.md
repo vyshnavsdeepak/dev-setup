@@ -13,12 +13,79 @@ macOS development environment. Industrial minimal.
 
 | Component | Config | Details |
 |---|---|---|
-| **Git** | `git/` | Dual identity (work/personal) via includeIf, GPG signing |
+| **Git** | `git/` | Dual identity (work/personal) via includeIf, GPG signing, delta diffs |
 | **Shell** | `shell/` | Oh My Zsh + Starship, fnm, zoxide, CLI aliases |
 | **Starship** | `shell/starship.toml` | user@host path -- branch %, industrial minimal |
 | **Tmux** | `tmux/` | Ctrl+a prefix, vim nav, resurrect, custom status bar |
 | **Neovim** | `nvim/` | LazyVim with LSP, Telescope, Treesitter |
 | **Ghostty** | `ghostty/` | SF Mono, muted palette, no theme |
+
+## Tools
+
+### Modern unix replacements
+
+| Tool | Replaces | What you get |
+|---|---|---|
+| `bat` | `cat` | Syntax highlighting, line numbers, git integration |
+| `eza` | `ls` | Colors, git status, tree view |
+| `fd` | `find` | Simpler syntax, respects .gitignore |
+| `ripgrep` | `grep` | Fast, recursive, respects .gitignore |
+| `fzf` | - | Fuzzy finder for files, history, anything |
+| `zoxide` | `cd` | Smart directory jumping, learns from usage |
+| `dust` | `du` | Visual disk usage with bar charts |
+| `procs` | `ps` | Colored, searchable, tree view process list |
+| `gping` | `ping` | Live graph of ping latency, overlay multiple hosts |
+| `jq` | - | JSON processor for the command line |
+| `grex` | - | Generate regex from example strings |
+| `tldr` | `man` | Simplified, example-driven man pages |
+
+### TUI dashboards
+
+| Tool | What you see |
+|---|---|
+| `btop` | Live CPU, RAM, disk, network, process dashboard |
+| `bandwhich` | Per-process network bandwidth usage (`sudo bandwhich`) |
+| `trippy` | Live traceroute TUI — watch packets hop across the network (`sudo trip`) |
+| `lazygit` | Full git TUI — staging, commits, branches, stash |
+| `gitui` | Lightweight alternative git TUI |
+| `lazydocker` | Docker containers, images, logs, stats |
+| `wtfutil` | Configurable personal dashboard — GitHub, system stats, custom widgets |
+| `gh dash` | GitHub dashboard TUI — PRs, issues, CI status across repos |
+| `process-compose` | Multi-process orchestrator TUI with live logs |
+
+### Dev tools
+
+| Tool | What it does |
+|---|---|
+| `neovim` | Editor — LazyVim distribution with IDE features |
+| `tmux` | Terminal multiplexer — splits, sessions, persistence |
+| `go` | Go toolchain |
+| `fnm` | Fast Node.js version manager (auto-switches on cd) |
+| `docker` + `colima` | Container runtime (no Docker Desktop needed) |
+| `docker-compose` | Multi-container orchestration |
+| `gh` | GitHub CLI |
+| `act` | Run GitHub Actions workflows locally |
+| `git-delta` | Beautiful git diffs — side-by-side, syntax highlighting |
+| `gnupg` | GPG for commit signing |
+| `just` | Command runner (simpler Make) |
+| `overmind` | Procfile-based process manager |
+| `glow` | Markdown renderer for the terminal |
+| `starship` | Cross-shell prompt |
+
+### Apps (casks)
+
+| App | What it does |
+|---|---|
+| **Ghostty** | Terminal emulator |
+| **Warp** | AI-powered terminal |
+| **Raycast** | Launcher, window management, clipboard, snippets |
+| **Obsidian** | Markdown-based knowledge base |
+| **Superwhisper** | Voice-to-text, runs locally |
+| **Shottr** | Screenshots with annotation, measurement, blur |
+| **Figma** | Design tool |
+| **Slack** | Messaging |
+| **VS Code** | Editor (fallback) |
+| **Deskflow** | KVM — share keyboard/mouse across machines |
 
 ## Setup on a new machine
 

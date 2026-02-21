@@ -16,6 +16,9 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
+# gh extensions
+gh extension install dlvhdr/gh-dash 2>/dev/null || true
+
 # Node LTS
 eval "$(fnm env)"
 fnm install --lts
