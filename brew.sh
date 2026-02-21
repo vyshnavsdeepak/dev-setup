@@ -10,7 +10,7 @@ brew install fnm go neovim
 brew install docker docker-compose colima
 
 # CLI tools
-brew install fzf bat eza fd ripgrep jq zoxide starship tmux lazygit lazydocker tldr gnupg
+brew install fzf bat eza fd ripgrep jq zoxide starship tmux lazygit lazydocker tldr gnupg glow
 
 # Terminal
 brew install --cask ghostty
