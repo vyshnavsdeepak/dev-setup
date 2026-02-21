@@ -71,9 +71,9 @@ style = '#606060'
 
 # --- prompt character: % like classic zsh
 [character]
-success_symbol = '[%](#808080 bold)'
-error_symbol = '[%](#a04040 bold)'
-vimcmd_symbol = '[%](#cc7832 bold)'
+success_symbol = '[>>](#cc7832 bold)'
+error_symbol = '[>>](#a04040 bold)'
+vimcmd_symbol = '[<<](#cc7832 bold)'
 
 [line_break]
 disabled = false
