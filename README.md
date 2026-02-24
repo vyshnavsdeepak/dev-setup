@@ -151,3 +151,22 @@ Automatically switches based on project directory:
 vyshnav@dock .../your-work-org/your-work-project -- main modified
 %
 ```
+
+## Troubleshooting
+
+### Colima fails to start — "disk in use by instance colima"
+
+Happens after a crash or unclean shutdown. Lima leaves a stale symlink:
+
+```bash
+rm ~/.colima/_lima/_disks/colima/in_use_by
+brew services restart colima
+```
+
+### GPG signing fails — "database_open waiting for lock"
+
+Stale lock file left after a crash:
+
+```bash
+rm ~/.gnupg/public-keys.d/pubring.db.lock
+```
