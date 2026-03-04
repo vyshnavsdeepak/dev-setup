@@ -94,9 +94,8 @@ macOS development environment. Industrial minimal.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # 2. Clone this repo
-mkdir -p ~/src/github.com/vyshnavsdeepak
-git clone git@github.com:vyshnavsdeepak/dev-setup.git ~/src/github.com/vyshnavsdeepak/dev-setup
-cd ~/src/github.com/vyshnavsdeepak/dev-setup
+git clone git@github.com:vyshnavsdeepak/dev-setup.git ~/dev-setup
+cd ~/dev-setup
 
 # 3. Install packages + start Colima (Docker runtime)
 ./brew.sh
@@ -104,10 +103,10 @@ cd ~/src/github.com/vyshnavsdeepak/dev-setup
 # 4. Symlink dotfiles
 ./install.sh
 
-# 5. Set hostname
-sudo scutil --set HostName dock
-sudo scutil --set LocalHostName dock
-sudo scutil --set ComputerName dock
+# 5. Set hostname (optional)
+sudo scutil --set HostName yourhost
+sudo scutil --set LocalHostName yourhost
+sudo scutil --set ComputerName yourhost
 
 # 6. Install tmux plugins (inside tmux)
 # Ctrl+a then Shift+I
@@ -148,7 +147,7 @@ Automatically switches based on project directory:
 ## Prompt
 
 ```
-vyshnav@dock .../your-work-org/your-work-project -- main modified
+user@host .../your-work-org/your-work-project -- main modified
 %
 ```
 
