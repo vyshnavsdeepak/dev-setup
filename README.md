@@ -89,6 +89,8 @@ macOS development environment. Industrial minimal.
 
 ## Setup on a new machine
 
+### Interactive installer (recommended)
+
 ```bash
 # 1. Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -97,22 +99,36 @@ macOS development environment. Industrial minimal.
 git clone git@github.com:vyshnavsdeepak/dev-setup.git ~/dev-setup
 cd ~/dev-setup
 
-# 3. Install packages + start Colima (Docker runtime)
+# 3. Run the TUI installer
+./bootstrap.sh
+```
+
+`bootstrap.sh` installs Rust if needed, builds the binary, and launches the interactive installer. Walk through the wizard:
+
+- **Select** which modules to install (packages / dotfiles / system / post-install)
+- **Configure** git name, email, GPG key, hostname
+- **Confirm** and watch live output per step
+- **Resume** — completed steps are skipped if you re-run after a failure
+
+```bash
+# Dry-run: preview all commands without making changes
+./bootstrap.sh --dry-run
+```
+
+### Manual (step by step)
+
+```bash
+# Install packages + start Colima (Docker runtime)
 ./brew.sh
 
-# 4. Symlink dotfiles
+# Symlink dotfiles
 ./install.sh
 
-# 5. Set hostname (optional)
-sudo scutil --set HostName yourhost
-sudo scutil --set LocalHostName yourhost
-sudo scutil --set ComputerName yourhost
+# Apply macOS defaults
+./macos/macos.sh
 
-# 6. Install tmux plugins (inside tmux)
-# Ctrl+a then Shift+I
-
-# 7. Open nvim (plugins auto-install)
-# nvim, then :LazyExtras to enable lang.go, lang.typescript, lang.docker
+# Install tmux plugins (inside tmux): Ctrl+a then Shift+I
+# Open nvim to auto-install plugins, then :LazyExtras for lang.go / lang.typescript / lang.docker
 ```
 
 ## Docker
